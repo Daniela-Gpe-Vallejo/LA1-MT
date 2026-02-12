@@ -6,5 +6,10 @@ namespace Simulador_MT
         {
             InitializeComponent();
         }
+
+        private void txtAlfabeto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
