@@ -35,29 +35,32 @@
             lblAlfabetoHint = new Label();
             gridCinta = new DataGridView();
             GrpCadenaDeEntrada = new GroupBox();
-            lblCadenaEntrada = new Label();
             lblPosicionInicial = new Label();
+            lblCadenaEntrada = new Label();
             grpAlfabeto = new GroupBox();
             lblAlfabeto = new Label();
-            lstOperaciones = new ListBox();
-            btnAgregarOp = new Button();
             grpCinta = new GroupBox();
-            btnQuitarOp = new Button();
             lstCompuesta = new ListBox();
             btnPaso = new Button();
             btnEjecutar = new Button();
             grpMaquinaCompuesta = new GroupBox();
             btnReset = new Button();
-            numDelay = new NumericUpDown();
-            radioButton1 = new RadioButton();
+            radMoverIzquierda = new RadioButton();
             grpMaquina = new GroupBox();
+            radMoverDerecha = new RadioButton();
+            radEscribirDerecha = new RadioButton();
+            radBuscarDerecha = new RadioButton();
+            radBuscaeIzquierda = new RadioButton();
+            radEscribirIzquierda = new RadioButton();
+            radBorrarDerecha = new RadioButton();
+            radBorrarIzquierda = new RadioButton();
+            radGuardar = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)numInicio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridCinta).BeginInit();
             GrpCadenaDeEntrada.SuspendLayout();
             grpAlfabeto.SuspendLayout();
             grpCinta.SuspendLayout();
             grpMaquinaCompuesta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numDelay).BeginInit();
             grpMaquina.SuspendLayout();
             SuspendLayout();
             // 
@@ -77,7 +80,7 @@
             // 
             // btnInicializar
             // 
-            btnInicializar.Location = new Point(63, 88);
+            btnInicializar.Location = new Point(62, 68);
             btnInicializar.Name = "btnInicializar";
             btnInicializar.Size = new Size(104, 23);
             btnInicializar.TabIndex = 2;
@@ -96,7 +99,7 @@
             // 
             lblAlfabetoHint.AutoSize = true;
             lblAlfabetoHint.ForeColor = SystemColors.ControlDarkDark;
-            lblAlfabetoHint.Location = new Point(6, 59);
+            lblAlfabetoHint.Location = new Point(6, 50);
             lblAlfabetoHint.Name = "lblAlfabetoHint";
             lblAlfabetoHint.Size = new Size(221, 15);
             lblAlfabetoHint.TabIndex = 4;
@@ -124,15 +127,6 @@
             GrpCadenaDeEntrada.TabStop = false;
             GrpCadenaDeEntrada.Text = "Cadena de entrada";
             // 
-            // lblCadenaEntrada
-            // 
-            lblCadenaEntrada.AutoSize = true;
-            lblCadenaEntrada.Location = new Point(6, 30);
-            lblCadenaEntrada.Name = "lblCadenaEntrada";
-            lblCadenaEntrada.Size = new Size(109, 15);
-            lblCadenaEntrada.TabIndex = 2;
-            lblCadenaEntrada.Text = "Cadena de entrada:";
-            // 
             // lblPosicionInicial
             // 
             lblPosicionInicial.AutoSize = true;
@@ -142,15 +136,24 @@
             lblPosicionInicial.TabIndex = 3;
             lblPosicionInicial.Text = "Posicion inicial del cabezal:";
             // 
+            // lblCadenaEntrada
+            // 
+            lblCadenaEntrada.AutoSize = true;
+            lblCadenaEntrada.Location = new Point(6, 30);
+            lblCadenaEntrada.Name = "lblCadenaEntrada";
+            lblCadenaEntrada.Size = new Size(109, 15);
+            lblCadenaEntrada.TabIndex = 2;
+            lblCadenaEntrada.Text = "Cadena de entrada:";
+            // 
             // grpAlfabeto
             // 
             grpAlfabeto.Controls.Add(lblAlfabeto);
             grpAlfabeto.Controls.Add(txtAlfabeto);
             grpAlfabeto.Controls.Add(lblAlfabetoHint);
             grpAlfabeto.Controls.Add(btnInicializar);
-            grpAlfabeto.Location = new Point(21, 120);
+            grpAlfabeto.Location = new Point(21, 135);
             grpAlfabeto.Name = "grpAlfabeto";
-            grpAlfabeto.Size = new Size(240, 123);
+            grpAlfabeto.Size = new Size(240, 98);
             grpAlfabeto.TabIndex = 7;
             grpAlfabeto.TabStop = false;
             grpAlfabeto.Text = "Alfabeto";
@@ -164,49 +167,29 @@
             lblAlfabeto.TabIndex = 5;
             lblAlfabeto.Text = "Alfabeto:";
             // 
-            // lstOperaciones
-            // 
-            lstOperaciones.FormattingEnabled = true;
-            lstOperaciones.ItemHeight = 15;
-            lstOperaciones.Location = new Point(7, 22);
-            lstOperaciones.Name = "lstOperaciones";
-            lstOperaciones.Size = new Size(221, 124);
-            lstOperaciones.TabIndex = 8;
-            // 
-            // btnAgregarOp
-            // 
-            btnAgregarOp.Location = new Point(34, 152);
-            btnAgregarOp.Name = "btnAgregarOp";
-            btnAgregarOp.Size = new Size(75, 23);
-            btnAgregarOp.TabIndex = 9;
-            btnAgregarOp.Text = "Agregar";
-            btnAgregarOp.UseVisualStyleBackColor = true;
-            // 
             // grpCinta
             // 
-            grpCinta.Controls.Add(btnQuitarOp);
-            grpCinta.Controls.Add(lstOperaciones);
-            grpCinta.Controls.Add(btnAgregarOp);
-            grpCinta.Location = new Point(27, 255);
+            grpCinta.Controls.Add(radGuardar);
+            grpCinta.Controls.Add(radBorrarIzquierda);
+            grpCinta.Controls.Add(radBorrarDerecha);
+            grpCinta.Controls.Add(radEscribirIzquierda);
+            grpCinta.Controls.Add(radBuscaeIzquierda);
+            grpCinta.Controls.Add(radBuscarDerecha);
+            grpCinta.Controls.Add(radEscribirDerecha);
+            grpCinta.Controls.Add(radMoverDerecha);
+            grpCinta.Controls.Add(radMoverIzquierda);
+            grpCinta.Location = new Point(21, 261);
             grpCinta.Name = "grpCinta";
-            grpCinta.Size = new Size(234, 183);
+            grpCinta.Size = new Size(444, 169);
             grpCinta.TabIndex = 10;
             grpCinta.TabStop = false;
             grpCinta.Text = "Cinta";
-            // 
-            // btnQuitarOp
-            // 
-            btnQuitarOp.Location = new Point(134, 152);
-            btnQuitarOp.Name = "btnQuitarOp";
-            btnQuitarOp.Size = new Size(75, 23);
-            btnQuitarOp.TabIndex = 10;
-            btnQuitarOp.Text = "Quitar";
-            btnQuitarOp.UseVisualStyleBackColor = true;
             // 
             // lstCompuesta
             // 
             lstCompuesta.FormattingEnabled = true;
             lstCompuesta.ItemHeight = 15;
+            lstCompuesta.Items.AddRange(new object[] { "Mover a la Izquierda (L)", "Mover a la Derecha (R)", "Guardar simbolo actual", "Mover Derecha (R)", "Mover Izquierda (L)", "Escribir \"X\"", "Buscar " });
             lstCompuesta.Location = new Point(18, 22);
             lstCompuesta.Name = "lstCompuesta";
             lstCompuesta.Size = new Size(205, 94);
@@ -236,7 +219,7 @@
             grpMaquinaCompuesta.Controls.Add(lstCompuesta);
             grpMaquinaCompuesta.Controls.Add(btnPaso);
             grpMaquinaCompuesta.Controls.Add(btnEjecutar);
-            grpMaquinaCompuesta.Location = new Point(540, 277);
+            grpMaquinaCompuesta.Location = new Point(527, 261);
             grpMaquinaCompuesta.Name = "grpMaquinaCompuesta";
             grpMaquinaCompuesta.Size = new Size(238, 153);
             grpMaquinaCompuesta.TabIndex = 14;
@@ -252,23 +235,16 @@
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
             // 
-            // numDelay
+            // radMoverIzquierda
             // 
-            numDelay.Location = new Point(558, 210);
-            numDelay.Name = "numDelay";
-            numDelay.Size = new Size(64, 23);
-            numDelay.TabIndex = 15;
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(427, 302);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(94, 19);
-            radioButton1.TabIndex = 16;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "radioButton1";
-            radioButton1.UseVisualStyleBackColor = true;
+            radMoverIzquierda.AutoSize = true;
+            radMoverIzquierda.Location = new Point(23, 22);
+            radMoverIzquierda.Name = "radMoverIzquierda";
+            radMoverIzquierda.Size = new Size(127, 19);
+            radMoverIzquierda.TabIndex = 16;
+            radMoverIzquierda.TabStop = true;
+            radMoverIzquierda.Text = "Mover Izquierda (L)";
+            radMoverIzquierda.UseVisualStyleBackColor = true;
             // 
             // grpMaquina
             // 
@@ -280,14 +256,100 @@
             grpMaquina.TabStop = false;
             grpMaquina.Text = "Maquina compuesta";
             // 
+            // radMoverDerecha
+            // 
+            radMoverDerecha.AutoSize = true;
+            radMoverDerecha.Location = new Point(23, 44);
+            radMoverDerecha.Name = "radMoverDerecha";
+            radMoverDerecha.Size = new Size(123, 19);
+            radMoverDerecha.TabIndex = 17;
+            radMoverDerecha.TabStop = true;
+            radMoverDerecha.Text = "Mover Derecha (R)";
+            radMoverDerecha.UseVisualStyleBackColor = true;
+            // 
+            // radEscribirDerecha
+            // 
+            radEscribirDerecha.AutoSize = true;
+            radEscribirDerecha.Location = new Point(23, 69);
+            radEscribirDerecha.Name = "radEscribirDerecha";
+            radEscribirDerecha.Size = new Size(109, 19);
+            radEscribirDerecha.TabIndex = 18;
+            radEscribirDerecha.TabStop = true;
+            radEscribirDerecha.Text = "Escribir Derecha";
+            radEscribirDerecha.UseVisualStyleBackColor = true;
+            // 
+            // radBuscarDerecha
+            // 
+            radBuscarDerecha.AutoSize = true;
+            radBuscarDerecha.Location = new Point(23, 121);
+            radBuscarDerecha.Name = "radBuscarDerecha";
+            radBuscarDerecha.Size = new Size(172, 19);
+            radBuscarDerecha.TabIndex = 19;
+            radBuscarDerecha.TabStop = true;
+            radBuscarDerecha.Text = "Buscar simbolo a la derecha";
+            radBuscarDerecha.UseVisualStyleBackColor = true;
+            // 
+            // radBuscaeIzquierda
+            // 
+            radBuscaeIzquierda.AutoSize = true;
+            radBuscaeIzquierda.Location = new Point(23, 146);
+            radBuscaeIzquierda.Name = "radBuscaeIzquierda";
+            radBuscaeIzquierda.Size = new Size(178, 19);
+            radBuscaeIzquierda.TabIndex = 20;
+            radBuscaeIzquierda.TabStop = true;
+            radBuscaeIzquierda.Text = "Buscar simbolo a la izquierda";
+            radBuscaeIzquierda.UseVisualStyleBackColor = true;
+            // 
+            // radEscribirIzquierda
+            // 
+            radEscribirIzquierda.AutoSize = true;
+            radEscribirIzquierda.Location = new Point(23, 94);
+            radEscribirIzquierda.Name = "radEscribirIzquierda";
+            radEscribirIzquierda.Size = new Size(114, 19);
+            radEscribirIzquierda.TabIndex = 21;
+            radEscribirIzquierda.TabStop = true;
+            radEscribirIzquierda.Text = "Escribir Izquierda";
+            radEscribirIzquierda.UseVisualStyleBackColor = true;
+            // 
+            // radBorrarDerecha
+            // 
+            radBorrarDerecha.AutoSize = true;
+            radBorrarDerecha.Location = new Point(262, 22);
+            radBorrarDerecha.Name = "radBorrarDerecha";
+            radBorrarDerecha.Size = new Size(123, 19);
+            radBorrarDerecha.TabIndex = 22;
+            radBorrarDerecha.TabStop = true;
+            radBorrarDerecha.Text = "Borrar a la derecha";
+            radBorrarDerecha.UseVisualStyleBackColor = true;
+            // 
+            // radBorrarIzquierda
+            // 
+            radBorrarIzquierda.AutoSize = true;
+            radBorrarIzquierda.Location = new Point(262, 44);
+            radBorrarIzquierda.Name = "radBorrarIzquierda";
+            radBorrarIzquierda.Size = new Size(129, 19);
+            radBorrarIzquierda.TabIndex = 23;
+            radBorrarIzquierda.TabStop = true;
+            radBorrarIzquierda.Text = "Borrar a la izquierda";
+            radBorrarIzquierda.UseVisualStyleBackColor = true;
+            // 
+            // radGuardar
+            // 
+            radGuardar.AutoSize = true;
+            radGuardar.Location = new Point(262, 69);
+            radGuardar.Name = "radGuardar";
+            radGuardar.Size = new Size(67, 19);
+            radGuardar.TabIndex = 24;
+            radGuardar.TabStop = true;
+            radGuardar.Text = "Guardar";
+            radGuardar.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(grpMaquina);
-            Controls.Add(radioButton1);
-            Controls.Add(numDelay);
             Controls.Add(grpMaquinaCompuesta);
             Controls.Add(grpCinta);
             Controls.Add(grpAlfabeto);
@@ -301,11 +363,10 @@
             grpAlfabeto.ResumeLayout(false);
             grpAlfabeto.PerformLayout();
             grpCinta.ResumeLayout(false);
+            grpCinta.PerformLayout();
             grpMaquinaCompuesta.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)numDelay).EndInit();
             grpMaquina.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -330,8 +391,15 @@
         private Button btnEjecutar;
         private GroupBox grpMaquinaCompuesta;
         private Button btnReset;
-        private NumericUpDown numDelay;
-        private RadioButton radioButton1;
+        private RadioButton radMoverIzquierda;
         private GroupBox grpMaquina;
+        private RadioButton radBuscaeIzquierda;
+        private RadioButton radBuscarDerecha;
+        private RadioButton radEscribirDerecha;
+        private RadioButton radMoverDerecha;
+        private RadioButton radEscribirIzquierda;
+        private RadioButton radGuardar;
+        private RadioButton radBorrarIzquierda;
+        private RadioButton radBorrarDerecha;
     }
 }
